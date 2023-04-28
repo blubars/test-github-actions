@@ -2,7 +2,9 @@ name: hello-github-actions
 run-name: ${{ github.actor }} is testing actions
 on:
   schedule:
-    - cron: '0/20 * * * *'
+    - cron: '0/45 * * * *'
+env:
+  GIT_AUTHOR_NAME: ${{ github.actor }}
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
