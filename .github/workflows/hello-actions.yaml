@@ -5,6 +5,7 @@ on:
     - cron: '0/45 * * * *'
 env:
   GIT_AUTHOR_NAME: ${{ github.actor }}
+  GIT_AUTHOR_EMAIL: noemail@example.com
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
