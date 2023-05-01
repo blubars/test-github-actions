@@ -17,5 +17,8 @@ jobs:
           cache: 'pip' # caching pip dependencies
       - run: pip install -r requirements.txt
       - run: python sample_script.py > out/`date +"%Y-%m-%d.%H-%M.json"`
-      - run: git add out
-      - run: git commit -m 'Actions output'
+      - run: |
+          git config user.email $GIT_AUTHOR_NAME
+          git config user.name $GIT_AUTHOR_EMAIL
+          git add out
+          git commit -m 'Actions output'
